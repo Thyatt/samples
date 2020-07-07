@@ -1,0 +1,365 @@
+<header class="page-header">
+  <video class="bg-vid" loop="" muted="" autoplay="" poster="fpo.jpg">
+    <source src="/fpo.mp4">
+  </video>
+  <div class="wrapper">
+
+    <h1 class="white">
+      It's what makes <br/>
+      stories worth telling. <br/>
+      Real heart.
+    </h1>
+
+    <div class="video-outer">
+      <div class="inner">
+        <div class="expandingVideo">
+          <a href="" class="videoPoster button video">
+            <img src="/play.svg"/> play reel
+          </a>
+          <div class="videoContainer">
+            <% o = [('a'..'z'), ('A'..'Z')].map(&:to_a).flatten %>
+            <% randomID = (0...16).map { o[rand(o.length)] }.join %>
+            <%= render :partial => 'shared/video_player', :locals => { randomID: randomID, src: '/fpo2.mp4', thumbnail_url: '/fpo.jpg', captions_url: '/fpo.vtt'} %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="layer multiply wide tall layer4 horizontal right mobile-hide" style="bottom: 69px; left: -40px;"></div>
+  <div class="layer multiply mwide tall layer4 horizontal right mobile-show" style="bottom: 24px; left: -50px;"></div>
+
+  <div class="overflow">
+    <div class="layer multiply xxxwide short layer5 horizontal left mobile-hide" style="bottom: 0; right: -50px;"></div>
+    <div class="layer multiply xxxwide short layer5 horizontal left mobile-show dark" style="bottom: 0; right: -35px;"></div>
+  </div>
+
+</header>
+
+<section class="shows-grid grid-3 container-fluid">
+
+
+
+  <div class="row">
+      <% @shows.each_with_index do |show, i| %>
+        <% bgNumber = i % 4 %>
+        <%= render partial: "shared/content_wrapper", locals: {width: 4, object: show, page_context: 'homepage', index: bgNumber} %>
+      <% end %>
+  </div>
+  <a href="/shows" class="section-link arrow-link">
+    more shows <%= render partial: "shared/icons/arrow-right.svg" %>
+  </a>
+  </div>
+</section>
+
+<section class="casting-callout container-fluid full">
+  <div class="layer multiply mwide xtall layer0 vertical mobile-hide" style="top: 150px;right: 0px;"></div>
+  <div class="layer multiply thin short layer0 vertical mobile-hide" style="top: 120px;right: 350px;"></div>
+  <!--<div class="layer multiply thin short layer1 vertical mobile-hide" style="left: 35%; bottom:0;"></div>-->
+  <!--<div class="layer multiply thin short layer2 vertical mobile-hide" style="left: 37%; top:20%;"></div>-->
+  <div class="layer multiply xxwide tall layer2 vertical mobile-hide" style="right: 330px;bottom: 250px;"></div>
+  <!--<div class="layer multiply thin short layer3 vertical mobile-hide" style="left: 10%; top: 10%;"></div>-->
+  <!--<div class="layer multiply thin short layer4 vertical mobile-hide" style="left: 42%; bottom:30%;"></div>-->
+  <div class="layer multiply xwide xxtall layer4 vertical mobile-hide" style="bottom: 0;right: 0; "></div>
+  <!--<div class="layer multiply thin short layer5 vertical mobile-hide" style="left: 5%; bottom: 20%;"></div>-->
+  <div class="layer multiply xwide xxtall layer5 vertical mobile-hide" style="top: 30px;right: 450px;"></div>
+  <div class="layer multiply thin short layer5 vertical mobile-hide" style="right: 310px;bottom: 100px;"></div>
+
+  <div class="layer multiply thin tall layer0 vertical mobile-show" style="right: 0; top: 50%;"></div>
+  <div class="layer multiply thin tall layer0 vertical mobile-show" style="left: 0; top: 40%;"></div>
+  <div class="layer multiply wide xtall layer1 vertical mobile-show" style="right: 0; top: 10%;"></div>
+  <div class="layer multiply mwide xxtall layer2 vertical mobile-show" style="right: 0; top: 30%;"></div>
+  <div class="layer multiply xwide tall layer3 vertical mobile-show" style="left: 10%; top: 30%;"></div>
+  <div class="layer multiply lsquare layer5 vertical mobile-show" style="top: 0;left: 0;"></div>
+
+  <div class="row middle-md">
+    <div class="col-md-4 col-md-offset-1 ">
+      <div class="inner">
+        <h3 class="white">
+          Are you reality TV’s next&nbsp;big thing?
+        </h3>
+        <p class="white">
+          Your 15 minutes is waiting for you. <br/>
+          Check out our open casting calls today.
+        </p>
+        <a href="/casting" class="button black">
+          open casting calls
+        </a>
+      </div>
+    </div>
+    <div class="col-md-6">
+
+    </div>
+  </div>
+
+  <div class="layer layer0 vertical img1">
+    <%= image_tag('home/Paris@2x.jpg') %>
+  </div>
+  <div class="layer layer1 vertical img2">
+    <%= image_tag('home/Christian@2x.jpg') %>
+  </div>
+  <div class="layer layer3 vertical img3" >
+    <%= image_tag('home/Karamo@2x.jpg') %>
+  </div>
+  <div class="layer layer4 vertical img4" >
+    <%= image_tag('home/Kim@2x.jpg') %>
+  </div>
+  <div class="layer layer5 vertical img5" >
+    <%= image_tag('home/Kylie@2x.jpg') %>
+  </div>
+</section>
+
+<section class="scroller" id="stat_scroller">
+  <div class="bg-wrapper">  </div>
+
+    <div class="video-wrapper">
+      <video class="mobile-hide" muted autobuffer playsinline preload="preload" src="/BME__Stats--homepage_desktop.mp4"></video>
+      <video class="mobile-show" muted autobuffer playsinline preload="preload" src="/BME__Stats--homepage_mobile.mp4"></video>
+    </div>
+
+</section>
+
+<section class="awards container-fluid full">
+  <div class="row middle-md">
+    <div class="col-md-5">
+      <%= image_tag('home/fpo_awards.png') %>
+    </div>
+    <div class="col-md-6">
+      <h3 class="white">
+        We have a history of making history.
+      </h3>
+      <p class="white">
+        Bunim Murray Entertainment is in the business of producing award-winning programs for networks, like MTV, E!, HBO and Nickelodeon.
+      </p>
+      <a href="/about#awards" class="section-link arrow-link white">
+        more awards <%= render partial: "shared/icons/arrow-right.svg" %>
+      </a>
+    </div>
+  </div>
+  <div class="layer multiply xwide xshort layer4 horizontal left" style="bottom: 0;right: -50px;"></div>
+</section>
+
+<section class="shows-carousel">
+  <div class="carousel-wrapper">
+    <%= image_tag("home/Homepage__entertainment-slider@2x.jpg", class: "layer layer5 horizontal left", style: "right: -50%") %>
+
+    <%= image_tag("home/Homepage__entertainment-slider@2x.jpg", class: "layer layer5 horizontal right mobile-show", style: "top: 150px; right: -110%") %>
+  </div>
+  <div class="layer multiply xwide xxtall layer1 horizontal left mobile-hide" style="top: 0;right: 15%;"></div>
+  <div class="layer multiply xxxwide short layer3 horizontal right mobile-hide dark" style="bottom: -30px; left: 0;"></div>
+
+  <div class="layer multiply wide xxtall layer1 horizontal right mobile-show" style="height: 150px; top: 150px; left: -20%;"></div>
+  <div class="layer multiply xxxwide tall layer3 horizontal left mobile-show dark" style="top: 102px; right: 0%;"></div>
+</section>
+
+<section class="about container-fluid full">
+  <div class="bg-text layer layer4 horizontal left" style="top:100px; right: -200px;">
+    Entertainment
+  </div>
+  <div class="row">
+    <div class="col-md-offset-2 col-md-6">
+      <h3>
+        As real as we can make it.
+      </h3>
+      <p>
+        Authentic and unapologetically real storytelling is at the heart of everything we do.
+        Bunim Murray Entertainment does Real. Real moments. Real people. Real tragedy and real triumph. From reality TV and beyond.
+      </p>
+      <a href="/about" class="button">
+        who we are
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="people container-fluid full">
+  <div class="bg-text layer layer4 horizontal right" style="top: 10px;">
+    Our People
+  </div>
+  <div class="row">
+    <div class="col-md-offset-1 col-md-5 first-md">
+      <h3>
+        The people behind the scenes.
+      </h3>
+      <p class="mobile-show">
+        Come behind the camera and meet the real people who make groundbreaking happen.
+      </p>
+      <ul>
+        <li data-name="fpo_person.png">
+          <span>
+            Jonathan Murray
+          </span>
+        </li>
+        <li data-name="fpo_person_2.png">
+          <span>
+          Gil Goldschein
+        </span>
+        </li>
+        <li data-name="fpo_person_3.jpeg">
+          <span>
+          Mark Lebowitz
+        </span>
+        </li>
+        <li data-name="fpo_person_2.png">
+          <span>
+          Scott Freeman
+        </span>
+        </li>
+        <li data-name="fpo_person.png">
+          <span>
+          Sasha Alpert
+        </span>
+        </li>
+        <li data-name="fpo_person_2.png">
+          <span>
+          Dave Stone
+        </span>
+        </li>
+        <li data-name="fpo_person_4.jpeg">
+          <span>
+          Debbie Hori
+        </span>
+        </li>
+        <li data-name="fpo_person_3.jpeg">
+          <span>
+          Mark Raudonis
+        </span>
+        </li>
+        <li data-name="fpo_person.png">
+          <span>
+          Jonathan Stern
+          </span>
+        </li>
+        <li data-name="fpo_person_2.png">
+          <span>
+          Farnaz Farjam
+        </span>
+        </li>
+        <li data-name="fpo_person_4.jpeg">
+          <span>
+          Megan Sleeper
+        </span>
+        </li>
+      </ul>
+      <ul>
+        <li data-name="fpo_person_2.png">
+          <span>
+          Ben Salter
+          </span>
+        </li>
+        <li data-name="fpo_person_3.jpeg">
+          <span>
+          Dani Wassel
+         </span>
+        </li>
+        <li data-name="fpo_person_4.jpeg">
+          <span>
+          Bart Peele
+          </span>
+        </li>
+        <li data-name="fpo_person_4.jpeg">
+          <span>
+          Rupert Dobson
+          </span>
+        </li>
+        <li data-name="fpo_person_3.jpeg">
+          <span>
+          Maria Pepin
+         </span>
+        </li>
+        <li data-name="fpo_person.png">
+          <span>
+          David Sambuchi
+          </span>
+        </li>
+        <li data-name="fpo_person_2.png">
+          <span>
+          Erica Ross
+         </span>
+        </li>
+        <li data-name="fpo_person.png">
+          <span>
+          Ryan Singer
+          </span>
+        </li>
+        <li data-name="fpo_person_2.png">
+          <span>
+          George Milchev
+         </span>
+        </li>
+        <li data-name="fpo_person_4.jpeg">
+          <span>
+          Russel Jay
+         </span>
+        </li>
+        <li data-name="fpo_person_2.png">
+          <span>
+          Amanda Timpson
+          </span>
+        </li>
+      </ul>
+      <a href="/people" class="section-link arrow-link mobile-show">
+        bios <%= render partial: "shared/icons/arrow-right.svg" %>
+      </a>
+    </div>
+    <div class="col-md-5 first-xs">
+      <div class="gallery-wrapper">
+        <%= image_tag("home/Homepage__ourPeople@2x.jpg", class: "active default") %>
+      </div>
+      <div class="multiply layer layer4 vertical mobile-hide" style="top: 10%; right: 0; width: 94%; height: 85%;"></div>
+      <div class="multiply layer layer4 vertical mobile-show" style="top: -5%; right: -17px; width: 80%; height: 85%;"></div>
+      <a href="/people" class="section-link arrow-link mobile-hide">
+        bios <%= render partial: "shared/icons/arrow-right.svg" %>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="news container-fluid">
+  <div class="row">
+    <div class="col-md-offset-1 col-md-4">
+      <h3>Latest headlines.</h3>
+    </div>
+  </div>
+  <div class="row">
+    <% 6.times do |i| %>
+      <% bgNumber = i % 4 %>
+      <%= render partial: "shared/content_wrapper", locals: {width: 4, object: 'article', page_context: 'homepage', index: bgNumber} %>
+    <% end %>
+  </div>
+  <a href="/press" class="section-link arrow-link">
+    more headlines <%= render partial: "shared/icons/arrow-right.svg" %>
+  </a>
+  </div>
+  <div class="layer multiply xwide xshort layer5 horizontal left" style="bottom: 0;right: -35px;"></div>
+
+</section>
+
+<section class="join container-fluid full no-right-gutter">
+  <div class="row middle-md">
+    <div class="col-md-offset-1 col-md-5 first-md">
+      <h3>
+        Join the team.
+      </h3>
+      <p>
+        Bunim Murray Entertainment is always looking for the best of the best to help us stay on top of the game. Check out our open positions.
+      </p>
+      <a href="/careers" class="section-link arrow-link">
+        careers <%= render partial: "shared/icons/arrow-right.svg" %>
+      </a>
+      <a href="/internships" class="section-link arrow-link">
+        internships <%= render partial: "shared/icons/arrow-right.svg" %>
+      </a>
+    </div>
+    <div class="col-md-offset-1 col-md-5 first-xs">
+      <%= image_tag("home/homepage_JoinUs_Image@2x.jpg") %>
+    </div>
+  </div>
+  <div class="layer multiply square layer3 horizontal right" style="bottom: 0; left: -45px;"></div>
+</section>
+
+<section class="integrations">
+  <div class="contact">
+    <%= render partial: "shared/icons/arrow-right.svg" %> For integration and placement opportunities, contact <a href="mailto:be@bunim-murray.com">be@bunim-murray.com</a>.
+  </div>
+  <%= image_tag("home/fpo_banner.png") %>
+</section>

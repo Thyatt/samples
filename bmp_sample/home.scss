@@ -1,0 +1,401 @@
+.index {
+  header{
+    position: relative;
+    overflow: hidden;
+    .bg-vid {
+      width: 100%;
+      display: block;
+      @include respond-max($tablet) {
+        display: block;
+        height: 500px;
+        width: auto;
+      }
+    }
+    .wrapper {
+      position: absolute;
+      top: 40%;
+      left: 5%;
+      @include respond-max($tablet) {
+        height: 100%;
+        top: 0;
+        padding-top: 40%;
+        box-sizing: border-box;
+
+        .videoPoster {
+          position: absolute;
+          bottom: 24px;
+          right: 16px;
+        }
+      }
+    }
+
+    .overflow {
+      height: 69px;
+      width: 100%;
+      position: relative;
+      @include respond-max($tablet) {
+        height:24px;
+      }
+    }
+  }
+
+  section {
+    position: relative;
+  }
+
+  .shows-grid {
+    margin: 90px auto 135px auto;
+    @include respond-max($tablet){
+      margin: 64px auto 100px auto;
+    }
+  }
+
+  .casting-callout {
+    background: $darkNeutral;
+    height: 800px;
+    align-items: center;
+    overflow: hidden;
+
+    .row {
+      height: 800px;
+      @include respond-max($tablet){
+        text-align: center;
+      }
+      .col-md-6 {
+        @include respond-max($tablet){
+          height: 320px;
+          -ms-flex-order: -1;
+          -webkit-box-ordinal-group: 0;
+          order: -1;
+        }
+      }
+    }
+    .layer  {
+      position: absolute;
+      img {
+        width: 100%;
+      }
+      &.img1 {
+        bottom: 60px;
+        right: 10px;
+        width: 20%;
+        @include respond-max($tablet){
+          width: 36%;
+          top: 28%;
+          right: 6%;
+        }
+      }
+      &.img2 {
+        bottom: 350px;
+        right: 0px;
+        width: 17%;
+        @include respond-max($tablet){
+          width: 36%;
+          top: 13%;
+          right: 0;
+        }
+      }
+      &.img3 {
+        right: 540px;
+        bottom: 270px;
+        width: 15%;
+        @include respond-max($tablet){
+          width: 28%;
+          top: 13%;
+          left: -5%;
+        }
+      }
+      &.img4 {
+        right: 250px;
+        bottom: 250px;
+        width: 20%;
+        @include respond-max($tablet){
+          width: 40%;
+          top: 6%;
+          left: 23%;
+        }
+      }
+      &.img5 {
+        right: 330px;
+        bottom: 80px;
+        width: 19%;
+        @include respond-max($tablet){
+          width: 35%;
+          top: 30%;
+          left: 14%;
+        }
+      }
+    }
+  }
+
+  .scroller {
+    //background-color: $main-hover;
+    //background-image: radial-gradient(50% 48%, $main 28%, rgba(0,0,0,0.50) 100%);
+    width: 100%;
+    padding: 1px 0;
+    display: block;
+    position: relative;
+    background-color: $main-hover;
+    .bg-wrapper {
+      background-color: $main-hover;
+      background-image: radial-gradient(50% 52%, $main 28%, rgba(0,0,0,0.50) 100%);
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      &.stuck {
+        position: fixed;
+      }
+      &.abs {
+        top: initial;
+        bottom: 0;
+        left: 0;
+      }
+    }
+    .video-wrapper {
+      height:100vh;
+      position: relative;
+      z-index:1;
+      top: 0;
+      left: 0;
+      width:100%;
+      &.stuck {
+        position: fixed;
+      }
+
+      video {
+        height: 100%;
+        margin: 0 auto;
+        display: block;
+        &.mobile-show {
+          display: none;
+        }
+
+        @include respond-max($tablet) {
+          display: none;
+          width: 100%;
+          &.mobile-show {
+            display: block;
+          }
+        }
+      }
+    }
+  }
+
+  .awards {
+    background-color: #10308E;
+    background-image: linear-gradient(180deg, rgba(0,0,0,.5) 0%, rgba(0,0,0,1) 100%);
+    padding: 200px 0;
+    overflow: hidden;
+    @include respond-max($tablet){
+      padding-top: 20px;
+      padding-bottom: 140px;
+    }
+    .col-md-5 {
+      text-align: center;
+      img {
+        width: 100%;
+        @include respond-max($tablet) {
+          max-width: 80%;
+          display: block;
+          margin: 0 auto 80px auto;
+        }
+      }
+    }
+    .arrow-link {
+      opacity: .9;
+      svg g{
+        fill: white;
+      }
+      &:hover {
+        opacity: 1;
+        color: white;
+      }
+    }
+  }
+
+  .shows-carousel {
+    height:300px;
+    .carousel-wrapper {
+      overflow: hidden;
+      height: 100%;
+      width: 100%;
+      position: relative;
+    }
+    .layer.multiply.xxtall {
+      height: 100%;
+    }
+    img {
+      display: block;
+      height: 100%;
+      z-index: 1;
+      @include transition(.3s);
+      @include respond-max($tablet){
+        height: 150px;
+      }
+
+      &.mobile-show {
+        display: none;
+        @include respond-max($tablet){
+          display: block;
+        }
+      }
+    }
+  }
+
+  .about {
+    padding: 268px 0 190px 0;
+    position: relative;
+    overflow: hidden;
+    @include respond-max($tablet) {
+      padding: 80px 0;
+    }
+    .layer {
+      z-index: -1;
+    }
+  }
+
+  .people {
+    padding: 170px 0;
+    position: relative;
+    overflow: hidden;
+    @include respond-max($tablet) {
+      padding: 40px 0 90px 0;
+    }
+
+    .layer {
+      z-index: -1;
+    }
+    ul {
+      list-style: none;
+      display: inline-block;
+      margin-top: 48px;
+      @include respond-max($tablet) {
+        display: none;
+      }
+      &:first-of-type{
+        margin-right: 90px;
+      }
+      li {
+        line-height: 28px;
+        cursor: pointer;
+        span {
+          position: relative;
+          &:after {
+            content: "";
+            position: absolute;
+            width: 0%;
+            height: 8px;
+            background-color: rgba(20,66,204, .2);
+            left: 0;
+            bottom: 0;
+            @include transition(.2s);
+          }
+        }
+
+        &:hover {
+          span {
+            &:after {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+    .col-md-5 {
+      position: relative;
+      img {
+        width: 100%;
+        display: block;
+      }
+      .blue {
+        z-index: -1;
+      }
+      .black {
+        z-index: -2;
+      }
+      @include respond-max($tablet) {
+        img {
+          width: 80%;
+          float: right;
+          margin-bottom: 35px;
+        }
+      }
+      .gallery-wrapper {
+        position: relative;
+        background: black;
+        .image-viewer {
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          top: 0;
+          left: 0;
+          opacity: 0;
+          background-size: cover;
+          z-index: 2;
+        }
+      }
+    }
+
+    .section-link {
+      margin-right: 0;
+    }
+  }
+
+  .news {
+    padding-bottom: 240px;
+    overflow: hidden;
+    @include respond-max($tablet) {
+      padding-bottom: 160px;
+    }
+  }
+
+  .join {
+    background: $darkNeutral;
+    h3, p, a {
+      color: white;
+    }
+  }
+
+  .join {
+    .arrow-link {
+      opacity: .9;
+      display: block;
+      float: none;
+      text-align: right;
+      margin-top: 20px;
+      svg g{
+        fill: white;
+      }
+      &:hover {
+        opacity: 1;
+      }
+      margin-right: 20px;
+    }
+    .col-md-5 {
+      img {
+        display: block;
+        width: 100%;
+      }
+    }
+    .first-md {
+      @include respond-max($tablet) {
+        padding-left: 30px;
+        padding-right: 30px !important;
+        margin: 64px auto 130px auto;
+
+      }
+    }
+  }
+
+  .section-link {
+    float: right;
+    margin-top: 48px;
+    margin-right: 130px;
+    @include respond-max($tablet) {
+      margin-top: 20px;
+      margin-right: 0;
+    }
+  }
+}
